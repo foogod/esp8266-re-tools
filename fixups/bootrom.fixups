@@ -144,10 +144,15 @@ entrypoints:
     - 0x3ef4: UartGetCmdLn
     - 0x3f4c: GetUartDevice
     - 0x3f58: SelectSpiFunction
+    - 0x40c0: SPI_sector_erase
+    - 0x4174: SPI_page_program
+    - 0x42ac: SPI_read_data
     - 0x43c8: SPI_read_status
     - 0x4400: SPI_write_status
     - 0x443c: SPI_write_enable
     - 0x448c: Wait_SPI_Idle
+    - 0x44c0: Enable_QMode
+    - 0x4508: Disable_QMode
     - 0x4644: spi_flash_attach
     - 0x4678: Cache_Read_Enable
     - 0x47f0: Cache_Read_Disable
@@ -419,8 +424,8 @@ annotations:
     # tell it where to stop disassembling:
     - 0x0084: end-of-code
 
-    # Likewise, _ResetHandler ends with a call0 (which never returns).  Tell
-    # the disassembler this is actually the end of the function.
+    # _ResetHandler ends with a call0 (which never returns).  Tell the
+    # disassembler this is actually the end of the function.
     - 0x014c: end-of-code
 
     # By default, xtobjdis will try to autodetect the end of each function by
@@ -445,4 +450,24 @@ annotations:
     # tell it when it's out of sync so it can restart from the right place.
     - 0x00e0: opcode
     - 0x0698: opcode
+    - 0x1b78: opcode
+    - 0x219c: opcode
+    - 0x2de0: opcode
+    - 0x41cc: opcode
+    - 0x4361: opcode
+    - 0x5a54: opcode
+    - 0x82e9: opcode
+    - 0x8af1: opcode
+    - 0xbf0c: opcode
+    - 0xc0c1: opcode
+    - 0xc1d8: opcode
+    - 0xc2c4: opcode
+    - 0xc5bc: opcode
+    - 0xc8dc: opcode
+    - 0xcb14: opcode
+    - 0xcb68: opcode
+    - 0xcb8c: opcode
+    - 0xdcec: opcode
+    - 0xe264: opcode
+    - 0xe29d: opcode
 
